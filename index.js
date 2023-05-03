@@ -1,35 +1,26 @@
 const express = require("express"); //importa o módulo express neste arquivo
 const app = express(); //iniciando o express
 
-//criando a rota inicial
-app.get("/", function(req,res){
-    res.send("<h1>Bem vindo ao meu site novamente! alteracao nova</h1>");
+app.get('/', (req, res) => {
+    res.send('<h1>Bem-vindo à minha página inicial!</h1>');
+});
+  
+app.get('/sobre', (req, res) => {
+    res.send('<h1>Sobre mim</h1><p>Eu sou um estudante de analise e desenvolvimento de sistemas.</p>');
+});
+  
+app.get('/contato', (req, res) => {
+    res.send('<h1>Entre em contato comigo</h1><p>Email: teixeirarodrigo2311@gmail.com<br>Github: <a href="https://github.com/RodrigooSales/">https://github.com/RodrigooSales</a></p>');
+});
+
+app.get("/contato/email", function(req,res){
+    res.send("<h1>Meu Email para contato</h1> <p>Email: teixeirarodrigo2311@gmail.com</p>");
 })
 
-//rota do cadastro de produtos
-app.get("/produtos", function(req,res){
-    res.send("<h1>Lista de Produtos!</h1>");
+app.get("/contato/github", function(req,res){
+    res.send('<h1>Meu portifolio no Github</h1> <p>Github: <a href="https://github.com/RodrigooSales/">https://github.com/RodrigooSales</a></p>');
 })
-
-//rota com parametro 
-app.get("/consulta/:parametro", function(req,res){
-    //req --> dados enviados pelo cliente
-    //res --> resposta enviada pelo servidor de volta ao cliente
-    res.send("retorno consulta:" + req.params.parametro);
-})
-
-//rota com parametro opcional
-app.get("/cadastro/:nome?", function(req,res){
-    //req --> dados enviados pelo cliente
-    var nome = req.params.nome;
-    if (nome){
-        res.send("<h1>produto " + nome + " criado!</h1>");
-    }else{
-        res.send("produto criado!");
-    }
-    
-})
-
+  
 app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicação na porta 4000
     if (erro){
         console.log("Erro ao Iniciar.");
