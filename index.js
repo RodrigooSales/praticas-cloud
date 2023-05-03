@@ -21,7 +21,7 @@ app.get("/contato/github", function(req,res){
     res.send('<h1>Meu portifolio no Github</h1> <p>Github: <a href="https://github.com/RodrigooSales/">https://github.com/RodrigooSales</a></p>');
 })
   
-app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicação na porta 4000
+app.listen(process.env.PORT ?? 3000,function(erro){
     if (erro){
         console.log("Erro ao Iniciar.");
     }else{
