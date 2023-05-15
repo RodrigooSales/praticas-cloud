@@ -18,7 +18,7 @@ app.get("/contato/email", function(req,res){
 })
 
 app.get("/contato/github", function(req,res){
-    res.send('<h1>Meu portifolio no Github</h1> <p>Github: <a href="https://github.com/RodrigooSales/">https://github.com/RodrigooSales</a></p>');
+    res.send('<h1>Meu portifolio no Github!</h1> <p>Github: <a href="https://github.com/RodrigooSales/">https://github.com/RodrigooSales</a></p>');
 })
   
 app.listen(process.env.PORT ?? 3000,function(erro){
