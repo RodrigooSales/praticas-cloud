@@ -3,7 +3,7 @@ async function listarTodosProdutos() {
   const listaProdutos = document.getElementById("listaProdutos");
 
   try {
-    const response = await fetch("http://localhost:3000/produtos");
+    const response = await fetch("http://34.226.136.150:3000/produtos");
     const produtos = await response.json();
 
     listaProdutos.innerHTML = "";
@@ -25,7 +25,7 @@ async function listarProdutoPorId() {
   const produtoId = document.getElementById("produtoId").value;
 
   try {
-    const response = await fetch(`http://localhost:3000/produtos/${produtoId}`);
+    const response = await fetch(`http://34.226.136.150:3000/produtos/${produtoId}`);
     const produto = await response.json();
 
     listaProdutos.innerHTML = "";
@@ -45,7 +45,7 @@ async function criarProduto() {
   const preco = document.getElementById("preco").value;
 
   try {
-    const response = await fetch("http://localhost:3000/produtos", {
+    const response = await fetch("http://34.226.136.150:3000/produtos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ async function atualizarProduto() {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/produtos/${produtoId}`,
+      `http://34.226.136.150:3000/produtos/${produtoId}`,
       {
         method: "PUT",
         headers: {
@@ -108,7 +108,7 @@ async function excluirProduto() {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/produtos/${produtoId}`,
+      `http://34.226.136.150:3000/produtos/${produtoId}`,
       {
         method: "DELETE",
       }
